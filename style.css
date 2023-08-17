@@ -1,0 +1,378 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-smoothing: grayscale;
+}
+
+:root {
+    font-size: 62.5%;
+
+    --color-base-text: hsla(320, 69%, 42%, 1);
+    --color-normal-text: hsl(244, 38%, 28%);
+    --bg-color: hsla(283, 47%, 97%, 1);
+    --bg-white: hsl(0, 0%, 100%);
+    --bg-linear-gradient: linear-gradient(134deg, #343193 0%, #302c63 100%);
+    --color-placeholder: hsl(244, 38%, 28%);
+}
+
+html,
+body,
+input {
+    font-family: "Mulish", sans-serif;
+}
+
+body {
+    background: var(--bg-color);
+}
+
+h1 {
+    color: var(--color-base-text);
+    font-size: 3.2rem;
+    font-weight: 900;
+}
+
+h2 {
+    color: var(--color-base-text);
+    font-size: 2.9rem;
+    font-weight: 900;
+}
+
+.explorer {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.astronaut {
+    width: 36.4rem;
+    height: 37rem;
+
+    animation: entrance 1s forwards;
+}
+
+.title {
+    margin-top: 1.8rem;
+    margin-bottom: 0.5rem;
+
+    animation: entrance 0.5s forwards;
+}
+
+.title {
+    color: var(--color-normal-text);
+    font-size: 2rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    animation: entrance 0.5s forwards;
+    text-align: center;
+}
+
+.explorer button {
+    border: none;
+    background: none;
+    outline: none;
+
+    margin-top: 3.6rem;
+    margin-bottom: 9.4rem;
+
+    width: 5.8rem;
+    height: 10rem;
+
+    transition-property: transform;
+    transition-duration: 0.4s;
+}
+
+.explorer button:hover {
+    transform: scale(1.1);
+}
+
+.cards {
+    background: var(--bg-linear-gradient);
+    padding: 5.4rem 0;
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+article {
+    background: var(--bg-white);
+    border-radius: 20px;
+    width: 35rem;
+    height: fit-content;
+
+    padding: 2.6rem 6rem 2.6rem 2.6rem;
+
+    animation: articles 1s backwards;
+
+    transition-property: transform;
+    transition-duration: 0.4s;
+}
+
+article:hover {
+    transform: scale(1.2);
+}
+
+article img {
+    transition-property: transform;
+    transition-duration: 0.5s;
+}
+
+article img:hover {
+    transform: scale(1.2);
+}
+
+article + article {
+    margin-top: 5rem;
+
+    animation: articles 1s backwards;
+    animation-delay: 0.2s;
+}
+
+article + article + article {
+    animation: articles 1s backwards;
+    animation-delay: 0.4s;
+}
+
+article h2 {
+    margin-top: 2.8rem;
+    margin-bottom: 1.4rem;
+}
+
+article p {
+    color: var(--color-normal-text);
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+.contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    animation: articles 1s forwards;
+}
+
+.contact h1 {
+    margin-top: 8rem;
+    margin-bottom: 4.5rem;
+}
+
+fieldset {
+    border: none;
+}
+
+.fieldset-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+input {
+    position: relative;
+    padding: 1.2rem 1.2rem 1.2rem 4.5rem;
+    width: 35rem;
+    border-radius: 1.6rem;
+    outline: none;
+    border: 1.5px solid #312d64;
+
+    color: var(--color-placeholder);
+    font-family: Mulish;
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+.input-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    position: relative;
+}
+
+.input-wrapper img {
+    position: absolute;
+    left: 1.4rem;
+    z-index: 10;
+
+    transition-property: transform;
+    transition-duration: 0.4s;
+}
+
+.input-wrapper img:hover {
+    transform: scale(1.1);
+    transition-duration: 0.2s;
+}
+
+.input-wrapper textarea {
+    padding: 1.2rem 1.6rem;
+    border-radius: 1.6rem;
+    outline: none;
+    border: 1.5px solid #312d64;
+
+    height: 9.8rem;
+    width: 35rem;
+}
+
+input::placeholder {
+    color: var(--color-placeholder);
+    font-family: Mulish;
+    font-size: 1.6rem;
+    font-weight: 600;
+    line-height: 22rem;
+}
+
+textarea::placeholder {
+    color: var(--color-placeholder);
+    font-family: Mulish;
+    font-size: 1.6rem;
+    font-weight: 600;
+    line-height: 2.2rem;
+}
+
+textarea {
+    color: var(--color-placeholder);
+    font-family: Mulish;
+    font-size: 1.6rem;
+    font-weight: 600;
+    line-height: 2.2rem;
+
+    margin-bottom: 2.4rem;
+}
+
+.contact button {
+    color: var(--neutral-colors-white, #fff);
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 2.4rem;
+
+    padding: 1rem 1.6rem;
+    border: none;
+    outline: none;
+    border-radius: 1.6rem;
+    background: linear-gradient(134deg, #343193 0%, #302c63 100%);
+    width: fit-content;
+
+    margin-bottom: 6.5rem;
+
+    transition-property: transform;
+    transition-duration: 0.4s;
+}
+
+.contact button:hover {
+    transform: scale(1.1);
+}
+
+.stars {
+    display: none;
+}
+
+footer {
+    background: var(--bg-linear-gradient);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.6rem 0;
+
+    color: var(--bg-white);
+    font-weight: 600;
+    font-size: 1.6rem;
+}
+
+@keyframes entrance {
+    0% {
+        transform: translateY(-5rem);
+    }
+}
+
+@keyframes articles {
+    0% {
+        transform: translateY(-3rem);
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .explorer {
+        display: flex;
+        flex-direction: row-reverse;
+    }
+
+    .title {
+        display: flex;
+        align-items: start;
+        justify-content: space-between;
+        flex-direction: column;
+        height: 50rem;
+        margin-top: 8rem;
+        text-align: left;
+    }
+
+    .contact {
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+
+    .title h1 {
+        font-size: 4.5rem;
+        margin-right: 2.6rem;
+    }
+
+    .title h3 {
+        font-size: 3.2rem;
+    }
+
+    .cards {
+        display: flex;
+        flex-direction: row;
+    }
+
+    article {
+        padding: 3.2rem 1.6rem 7.2rem 3.2rem;
+    }
+
+    article + article {
+        margin-top: 0;
+        margin-left: 6rem;
+    }
+
+    article + article + article {
+        padding-bottom: 5.6rem;
+    }
+
+    .organize {
+        display: flex;
+        align-content: center;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .stars {
+        display: block;
+    }
+    #my-form {
+        padding-left: 80px;
+    }
+
+    .input-wrapper input,
+    .input-wrapper textarea {
+        width: 49rem;
+    }
+    .astronaut {
+        width: 65rem;
+        height: 65rem;
+        margin-bottom: 10rem;
+    }
+}
